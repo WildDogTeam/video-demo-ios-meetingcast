@@ -1,1 +1,0 @@
-../../../../WilddogSync/WilddogSync.framework/Headers/WDGSyncQuery.h
