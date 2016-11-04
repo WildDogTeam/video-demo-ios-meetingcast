@@ -1,0 +1,610 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28F032A11DCC666B006BAFDA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F032A01DCC666B006BAFDA /* main.m */; };
+		28F032A41DCC666B006BAFDA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F032A31DCC666B006BAFDA /* AppDelegate.m */; };
+		28F032A71DCC666B006BAFDA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F032A61DCC666B006BAFDA /* ViewController.m */; };
+		28F032AA1DCC666B006BAFDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F032A81DCC666B006BAFDA /* Main.storyboard */; };
+		28F032AC1DCC666B006BAFDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28F032AB1DCC666B006BAFDA /* Assets.xcassets */; };
+		28F032AF1DCC666B006BAFDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F032AD1DCC666B006BAFDA /* LaunchScreen.storyboard */; };
+		28F032BA1DCC666B006BAFDA /* WilddogVideoDemoMeetingcastTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F032B91DCC666B006BAFDA /* WilddogVideoDemoMeetingcastTests.m */; };
+		28F032C81DCC6792006BAFDA /* RoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F032C71DCC6792006BAFDA /* RoomViewController.m */; };
+		28F032CE1DCC67B7006BAFDA /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F032CD1DCC67B7006BAFDA /* UserTableViewCell.m */; };
+		28F032D01DCC67ED006BAFDA /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F032CF1DCC67ED006BAFDA /* IJKMediaFramework.framework */; };
+		28F032D21DCC6806006BAFDA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F032D11DCC6806006BAFDA /* libz.tbd */; };
+		28F032D41DCC680C006BAFDA /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F032D31DCC680C006BAFDA /* libbz2.tbd */; };
+		28F032D71DCC68E3006BAFDA /* UserListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F032D61DCC68E3006BAFDA /* UserListTableViewController.m */; };
+		D753E57C7A264F712E248645 /* libPods-WilddogVideoDemoMeetingcastTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 776AFB8DA0CCC57A627B5CD8 /* libPods-WilddogVideoDemoMeetingcastTests.a */; };
+		FF18B69997529DA6BFC4A155 /* libPods-WilddogVideoDemoMeetingcast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A1F915C58E654D770FE911 /* libPods-WilddogVideoDemoMeetingcast.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		28F032B61DCC666B006BAFDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28F032941DCC666B006BAFDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28F0329B1DCC666B006BAFDA;
+			remoteInfo = WilddogVideoDemoMeetingcast;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		28F0329C1DCC666B006BAFDA /* WilddogVideoDemoMeetingcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WilddogVideoDemoMeetingcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28F032A01DCC666B006BAFDA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		28F032A21DCC666B006BAFDA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		28F032A31DCC666B006BAFDA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		28F032A51DCC666B006BAFDA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		28F032A61DCC666B006BAFDA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		28F032A91DCC666B006BAFDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		28F032AB1DCC666B006BAFDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		28F032AE1DCC666B006BAFDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		28F032B01DCC666B006BAFDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28F032B51DCC666B006BAFDA /* WilddogVideoDemoMeetingcastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WilddogVideoDemoMeetingcastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		28F032B91DCC666B006BAFDA /* WilddogVideoDemoMeetingcastTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WilddogVideoDemoMeetingcastTests.m; sourceTree = "<group>"; };
+		28F032BB1DCC666B006BAFDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28F032C61DCC6792006BAFDA /* RoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomViewController.h; sourceTree = "<group>"; };
+		28F032C71DCC6792006BAFDA /* RoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomViewController.m; sourceTree = "<group>"; };
+		28F032CC1DCC67B7006BAFDA /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewCell.h; sourceTree = "<group>"; };
+		28F032CD1DCC67B7006BAFDA /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewCell.m; sourceTree = "<group>"; };
+		28F032CF1DCC67ED006BAFDA /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
+		28F032D11DCC6806006BAFDA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		28F032D31DCC680C006BAFDA /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		28F032D51DCC68E3006BAFDA /* UserListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserListTableViewController.h; sourceTree = "<group>"; };
+		28F032D61DCC68E3006BAFDA /* UserListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserListTableViewController.m; sourceTree = "<group>"; };
+		35A1F915C58E654D770FE911 /* libPods-WilddogVideoDemoMeetingcast.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WilddogVideoDemoMeetingcast.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58DD14557C24195CCB281AB6 /* Pods-WilddogVideoDemoMeetingcast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogVideoDemoMeetingcast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogVideoDemoMeetingcast/Pods-WilddogVideoDemoMeetingcast.debug.xcconfig"; sourceTree = "<group>"; };
+		776AFB8DA0CCC57A627B5CD8 /* libPods-WilddogVideoDemoMeetingcastTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WilddogVideoDemoMeetingcastTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80F4353DEE4AC01D0AAE8797 /* Pods-WilddogVideoDemoMeetingcastTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogVideoDemoMeetingcastTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogVideoDemoMeetingcastTests/Pods-WilddogVideoDemoMeetingcastTests.debug.xcconfig"; sourceTree = "<group>"; };
+		86A4BA22378DC30CDA5199E2 /* Pods-WilddogVideoDemoMeetingcast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogVideoDemoMeetingcast.release.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogVideoDemoMeetingcast/Pods-WilddogVideoDemoMeetingcast.release.xcconfig"; sourceTree = "<group>"; };
+		F094378FDD52FAA325F625F9 /* Pods-WilddogVideoDemoMeetingcastTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogVideoDemoMeetingcastTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogVideoDemoMeetingcastTests/Pods-WilddogVideoDemoMeetingcastTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		28F032991DCC666B006BAFDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28F032D41DCC680C006BAFDA /* libbz2.tbd in Frameworks */,
+				28F032D21DCC6806006BAFDA /* libz.tbd in Frameworks */,
+				FF18B69997529DA6BFC4A155 /* libPods-WilddogVideoDemoMeetingcast.a in Frameworks */,
+				28F032D01DCC67ED006BAFDA /* IJKMediaFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28F032B21DCC666B006BAFDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D753E57C7A264F712E248645 /* libPods-WilddogVideoDemoMeetingcastTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28F032931DCC666B006BAFDA = {
+			isa = PBXGroup;
+			children = (
+				28F0329E1DCC666B006BAFDA /* WilddogVideoDemoMeetingcast */,
+				28F032B81DCC666B006BAFDA /* WilddogVideoDemoMeetingcastTests */,
+				28F0329D1DCC666B006BAFDA /* Products */,
+				2B8F0287DC8FA1129D8E6F88 /* Pods */,
+				ECC77B8E6A968168A7650FA6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		28F0329D1DCC666B006BAFDA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28F0329C1DCC666B006BAFDA /* WilddogVideoDemoMeetingcast.app */,
+				28F032B51DCC666B006BAFDA /* WilddogVideoDemoMeetingcastTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28F0329E1DCC666B006BAFDA /* WilddogVideoDemoMeetingcast */ = {
+			isa = PBXGroup;
+			children = (
+				28F032CF1DCC67ED006BAFDA /* IJKMediaFramework.framework */,
+				28F032A21DCC666B006BAFDA /* AppDelegate.h */,
+				28F032A31DCC666B006BAFDA /* AppDelegate.m */,
+				28F032A51DCC666B006BAFDA /* ViewController.h */,
+				28F032A61DCC666B006BAFDA /* ViewController.m */,
+				28F032C61DCC6792006BAFDA /* RoomViewController.h */,
+				28F032C71DCC6792006BAFDA /* RoomViewController.m */,
+				28F032D51DCC68E3006BAFDA /* UserListTableViewController.h */,
+				28F032D61DCC68E3006BAFDA /* UserListTableViewController.m */,
+				28F032CC1DCC67B7006BAFDA /* UserTableViewCell.h */,
+				28F032CD1DCC67B7006BAFDA /* UserTableViewCell.m */,
+				28F032A81DCC666B006BAFDA /* Main.storyboard */,
+				28F032AB1DCC666B006BAFDA /* Assets.xcassets */,
+				28F032AD1DCC666B006BAFDA /* LaunchScreen.storyboard */,
+				28F032B01DCC666B006BAFDA /* Info.plist */,
+				28F0329F1DCC666B006BAFDA /* Supporting Files */,
+			);
+			path = WilddogVideoDemoMeetingcast;
+			sourceTree = "<group>";
+		};
+		28F0329F1DCC666B006BAFDA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				28F032A01DCC666B006BAFDA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		28F032B81DCC666B006BAFDA /* WilddogVideoDemoMeetingcastTests */ = {
+			isa = PBXGroup;
+			children = (
+				28F032B91DCC666B006BAFDA /* WilddogVideoDemoMeetingcastTests.m */,
+				28F032BB1DCC666B006BAFDA /* Info.plist */,
+			);
+			path = WilddogVideoDemoMeetingcastTests;
+			sourceTree = "<group>";
+		};
+		2B8F0287DC8FA1129D8E6F88 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58DD14557C24195CCB281AB6 /* Pods-WilddogVideoDemoMeetingcast.debug.xcconfig */,
+				86A4BA22378DC30CDA5199E2 /* Pods-WilddogVideoDemoMeetingcast.release.xcconfig */,
+				80F4353DEE4AC01D0AAE8797 /* Pods-WilddogVideoDemoMeetingcastTests.debug.xcconfig */,
+				F094378FDD52FAA325F625F9 /* Pods-WilddogVideoDemoMeetingcastTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ECC77B8E6A968168A7650FA6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28F032D31DCC680C006BAFDA /* libbz2.tbd */,
+				28F032D11DCC6806006BAFDA /* libz.tbd */,
+				35A1F915C58E654D770FE911 /* libPods-WilddogVideoDemoMeetingcast.a */,
+				776AFB8DA0CCC57A627B5CD8 /* libPods-WilddogVideoDemoMeetingcastTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		28F0329B1DCC666B006BAFDA /* WilddogVideoDemoMeetingcast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28F032BE1DCC666B006BAFDA /* Build configuration list for PBXNativeTarget "WilddogVideoDemoMeetingcast" */;
+			buildPhases = (
+				CA0D2192C55FEA4A0A4038F6 /* [CP] Check Pods Manifest.lock */,
+				28F032981DCC666B006BAFDA /* Sources */,
+				28F032991DCC666B006BAFDA /* Frameworks */,
+				28F0329A1DCC666B006BAFDA /* Resources */,
+				7AE32D640CC3184CB049161F /* [CP] Embed Pods Frameworks */,
+				E9A96DE41FF3911E95BBCD85 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WilddogVideoDemoMeetingcast;
+			productName = WilddogVideoDemoMeetingcast;
+			productReference = 28F0329C1DCC666B006BAFDA /* WilddogVideoDemoMeetingcast.app */;
+			productType = "com.apple.product-type.application";
+		};
+		28F032B41DCC666B006BAFDA /* WilddogVideoDemoMeetingcastTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28F032C11DCC666B006BAFDA /* Build configuration list for PBXNativeTarget "WilddogVideoDemoMeetingcastTests" */;
+			buildPhases = (
+				6AA02647F692BF9528CA9E87 /* [CP] Check Pods Manifest.lock */,
+				28F032B11DCC666B006BAFDA /* Sources */,
+				28F032B21DCC666B006BAFDA /* Frameworks */,
+				28F032B31DCC666B006BAFDA /* Resources */,
+				885AF2FDC63F299C1B0A10D8 /* [CP] Embed Pods Frameworks */,
+				261AE42AECEE4ED88329AACC /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28F032B71DCC666B006BAFDA /* PBXTargetDependency */,
+			);
+			name = WilddogVideoDemoMeetingcastTests;
+			productName = WilddogVideoDemoMeetingcastTests;
+			productReference = 28F032B51DCC666B006BAFDA /* WilddogVideoDemoMeetingcastTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		28F032941DCC666B006BAFDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = liwuyang;
+				TargetAttributes = {
+					28F0329B1DCC666B006BAFDA = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 5RERN32D73;
+						ProvisioningStyle = Automatic;
+					};
+					28F032B41DCC666B006BAFDA = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 5RERN32D73;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 28F0329B1DCC666B006BAFDA;
+					};
+				};
+			};
+			buildConfigurationList = 28F032971DCC666B006BAFDA /* Build configuration list for PBXProject "WilddogVideoDemoMeetingcast" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 28F032931DCC666B006BAFDA;
+			productRefGroup = 28F0329D1DCC666B006BAFDA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				28F0329B1DCC666B006BAFDA /* WilddogVideoDemoMeetingcast */,
+				28F032B41DCC666B006BAFDA /* WilddogVideoDemoMeetingcastTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		28F0329A1DCC666B006BAFDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28F032AF1DCC666B006BAFDA /* LaunchScreen.storyboard in Resources */,
+				28F032AC1DCC666B006BAFDA /* Assets.xcassets in Resources */,
+				28F032AA1DCC666B006BAFDA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28F032B31DCC666B006BAFDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		261AE42AECEE4ED88329AACC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WilddogVideoDemoMeetingcastTests/Pods-WilddogVideoDemoMeetingcastTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AA02647F692BF9528CA9E87 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7AE32D640CC3184CB049161F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WilddogVideoDemoMeetingcast/Pods-WilddogVideoDemoMeetingcast-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		885AF2FDC63F299C1B0A10D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WilddogVideoDemoMeetingcastTests/Pods-WilddogVideoDemoMeetingcastTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA0D2192C55FEA4A0A4038F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E9A96DE41FF3911E95BBCD85 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WilddogVideoDemoMeetingcast/Pods-WilddogVideoDemoMeetingcast-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28F032981DCC666B006BAFDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28F032D71DCC68E3006BAFDA /* UserListTableViewController.m in Sources */,
+				28F032A71DCC666B006BAFDA /* ViewController.m in Sources */,
+				28F032A41DCC666B006BAFDA /* AppDelegate.m in Sources */,
+				28F032CE1DCC67B7006BAFDA /* UserTableViewCell.m in Sources */,
+				28F032A11DCC666B006BAFDA /* main.m in Sources */,
+				28F032C81DCC6792006BAFDA /* RoomViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28F032B11DCC666B006BAFDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28F032BA1DCC666B006BAFDA /* WilddogVideoDemoMeetingcastTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		28F032B71DCC666B006BAFDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28F0329B1DCC666B006BAFDA /* WilddogVideoDemoMeetingcast */;
+			targetProxy = 28F032B61DCC666B006BAFDA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		28F032A81DCC666B006BAFDA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28F032A91DCC666B006BAFDA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		28F032AD1DCC666B006BAFDA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28F032AE1DCC666B006BAFDA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		28F032BC1DCC666B006BAFDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		28F032BD1DCC666B006BAFDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		28F032BF1DCC666B006BAFDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58DD14557C24195CCB281AB6 /* Pods-WilddogVideoDemoMeetingcast.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5RERN32D73;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WilddogVideoDemoMeetingcast",
+				);
+				INFOPLIST_FILE = WilddogVideoDemoMeetingcast/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wilddog.WilddogVideoDemoMeetingcast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		28F032C01DCC666B006BAFDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86A4BA22378DC30CDA5199E2 /* Pods-WilddogVideoDemoMeetingcast.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5RERN32D73;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WilddogVideoDemoMeetingcast",
+				);
+				INFOPLIST_FILE = WilddogVideoDemoMeetingcast/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wilddog.WilddogVideoDemoMeetingcast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		28F032C21DCC666B006BAFDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80F4353DEE4AC01D0AAE8797 /* Pods-WilddogVideoDemoMeetingcastTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 5RERN32D73;
+				INFOPLIST_FILE = WilddogVideoDemoMeetingcastTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wilddog.WilddogVideoDemoMeetingcastTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WilddogVideoDemoMeetingcast.app/WilddogVideoDemoMeetingcast";
+			};
+			name = Debug;
+		};
+		28F032C31DCC666B006BAFDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F094378FDD52FAA325F625F9 /* Pods-WilddogVideoDemoMeetingcastTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 5RERN32D73;
+				INFOPLIST_FILE = WilddogVideoDemoMeetingcastTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wilddog.WilddogVideoDemoMeetingcastTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WilddogVideoDemoMeetingcast.app/WilddogVideoDemoMeetingcast";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28F032971DCC666B006BAFDA /* Build configuration list for PBXProject "WilddogVideoDemoMeetingcast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28F032BC1DCC666B006BAFDA /* Debug */,
+				28F032BD1DCC666B006BAFDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28F032BE1DCC666B006BAFDA /* Build configuration list for PBXNativeTarget "WilddogVideoDemoMeetingcast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28F032BF1DCC666B006BAFDA /* Debug */,
+				28F032C01DCC666B006BAFDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28F032C11DCC666B006BAFDA /* Build configuration list for PBXNativeTarget "WilddogVideoDemoMeetingcastTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28F032C21DCC666B006BAFDA /* Debug */,
+				28F032C31DCC666B006BAFDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 28F032941DCC666B006BAFDA /* Project object */;
+}

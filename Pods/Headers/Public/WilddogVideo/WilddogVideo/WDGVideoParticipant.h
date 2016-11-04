@@ -1,0 +1,1 @@
+../../../../WilddogVideo/WilddogVideo.framework/Headers/WDGVideoParticipant.h
