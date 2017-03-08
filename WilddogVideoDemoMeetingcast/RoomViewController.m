@@ -15,7 +15,7 @@
 
 #define conferenceID @"123456"
 
-@interface RoomViewController ()<WDGVideoClientDelegate, WDGVideoConferenceDelegate, WDGVideoMeetingCastDelegate>
+@interface RoomViewController ()<WDGVideoClientDelegate, WDGVideoConferenceDelegate, WDGVideoMeetingCastDelegate,WDGVideoParticipantDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *directContainerView;
 @property(nonatomic, strong) IJKFFMoviePlayerController *player;//直播播放器对象
@@ -96,7 +96,7 @@
         [self displayErrorMessage:@"开启视频会议才能直播"];
         return;
     }
-
+    self.videoConference.meetingCast.delegate = self;
     [self.videoConference.meetingCast startWithParticipantID:self.wDGUser.uid];
 }
 
@@ -139,7 +139,7 @@
 
     IJKFFOptions *options = [IJKFFOptions optionsByDefault];
 
-    NSURL *url = [NSURL URLWithString:castURLs[@"pull-rtmp-url"]];
+    NSURL *url = [NSURL URLWithString:castURLs[@"rtmp"]];
     self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:options];
     self.player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     self.player.view.frame = self.directContainerView.bounds;
@@ -153,11 +153,6 @@
 
     [self.liveBtn setTitle:@"断开直播" forState:UIControlStateNormal];
 }
-
-- (void)wilddogVideoMeetingCast:(WDGVideoMeetingCast *)MeetingCast didSwitchedToParticipantID:(NSString *)castingParticipantID {
-    NSLog(@"%s", __func__);
-}
-
 
 - (void)wilddogVideoMeetingCastDidStopped:(WDGVideoMeetingCast *)MeetingCast {
     NSLog(@"%s", __func__);
@@ -176,6 +171,8 @@
 #pragma -mark WDGVideoConversationDelegate
 
 - (void)conversation:(WDGVideoConversation *)conversation didConnectParticipant:(WDGVideoParticipant *)participant {
+
+    participant.delegate = self;
 
     [self.remoteStreams addObject: participant.stream];
 
