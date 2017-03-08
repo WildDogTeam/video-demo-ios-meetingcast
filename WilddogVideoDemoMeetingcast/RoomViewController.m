@@ -11,6 +11,7 @@
 #import <WilddogSync/WilddogSync.h>
 #import <WilddogVideo/WilddogVideo.h>
 #import <IJKMediaFramework/IJKMediaFramework.h>
+
 #import "UserListTableViewController.h"
 
 #define conferenceID @"123456"
@@ -25,8 +26,9 @@
 @property(nonatomic, strong) WDGVideoConference *videoConference;
 @property(nonatomic, strong) WDGVideoLocalStream *localStream;
 @property (nonatomic, strong) WDGVideoOutgoingInvite *outgoingInvite;
-@property (weak, nonatomic) IBOutlet UIButton *liveBtn;
 @property(nonatomic, strong) NSMutableArray<WDGVideoRemoteStream *> *remoteStreams;
+
+@property (weak, nonatomic) IBOutlet UIButton *liveBtn;
 @property (weak, nonatomic) IBOutlet WDGVideoView *localVideoView;
 @property (weak, nonatomic) IBOutlet WDGVideoView *remoteVideoView01;
 @property (weak, nonatomic) IBOutlet WDGVideoView *remoteVideoView02;
@@ -39,6 +41,7 @@
 @implementation RoomViewController
 
 - (void)viewDidLoad {
+
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
@@ -66,6 +69,7 @@
 }
 
 -(void)appWillEnterForegroundNotification:(NSNotification *)notification{
+
     WDGSyncReference *userWilddog = [[self.wilddog child:@"users"] child:self.wDGUser.uid];
     [userWilddog setValue:@YES];
     [userWilddog onDisconnectRemoveValue];
@@ -96,8 +100,13 @@
         [self displayErrorMessage:@"开启视频会议才能直播"];
         return;
     }
-    self.videoConference.meetingCast.delegate = self;
-    [self.videoConference.meetingCast startWithParticipantID:self.wDGUser.uid];
+
+    if (self.videoConference.meetingCast.status == WDGVideoMeetingCastStatusOff) {
+        self.videoConference.meetingCast.delegate = self;
+        [self.videoConference.meetingCast startWithParticipantID:self.wDGUser.uid];
+    }else{
+        [self.videoConference.meetingCast stop];
+    }
 }
 
 - (IBAction)clickDisconnect:(UIButton *)sender {
@@ -117,7 +126,8 @@
 #pragma mark - Display an Error
 
 - (void) displayErrorMessage:(NSString*)errorMessage {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"视频通话邀请被对方拒绝" preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:errorMessage preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
     [alertController addAction:okAction];
     [self presentViewController:alertController animated:YES completion:nil];
@@ -127,50 +137,43 @@
 
 // 随后于 WDGVideoMeetingCastDelegate 方法中获得直播地址
 - (void)meetingCast:(WDGVideoMeetingCast *)meetingCast didUpdatedWithStatus:(WDGVideoMeetingCastStatus)status castingParticipantID:(NSString * _Nullable)participantID castURLs:(NSDictionary<NSString *, NSString *> * _Nullable)castURLs {
+
     NSLog(@"participantID: %@ castURLs: %@", participantID, castURLs);
 
+    if (status == WDGVideoMeetingCastStatusOn) {
 #ifdef DEBUG
-    [IJKFFMoviePlayerController setLogReport:NO];
-    [IJKFFMoviePlayerController setLogLevel:k_IJK_LOG_SILENT];
+        [IJKFFMoviePlayerController setLogReport:NO];
+        [IJKFFMoviePlayerController setLogLevel:k_IJK_LOG_SILENT];
 #else
-    [IJKFFMoviePlayerController setLogReport:NO];
-    [IJKFFMoviePlayerController setLogLevel:k_IJK_LOG_INFO];
+        [IJKFFMoviePlayerController setLogReport:NO];
+        [IJKFFMoviePlayerController setLogLevel:k_IJK_LOG_INFO];
 #endif
 
-    IJKFFOptions *options = [IJKFFOptions optionsByDefault];
+        IJKFFOptions *options = [IJKFFOptions optionsByDefault];
 
-    NSURL *url = [NSURL URLWithString:castURLs[@"rtmp"]];
-    self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:options];
-    self.player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    self.player.view.frame = self.directContainerView.bounds;
-    self.player.scalingMode = IJKMPMovieScalingModeAspectFit;
-    self.player.shouldAutoplay = YES;
+        NSURL *url = [NSURL URLWithString:castURLs[@"rtmp"]];
+        self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:options];
+        self.player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        self.player.view.frame = self.directContainerView.bounds;
+        self.player.scalingMode = IJKMPMovieScalingModeAspectFit;
+        self.player.shouldAutoplay = YES;
 
-    self.directContainerView.autoresizesSubviews = YES;
-    [self.directContainerView addSubview:self.player.view];
+        self.directContainerView.autoresizesSubviews = YES;
+        [self.directContainerView addSubview:self.player.view];
 
-    [self.player prepareToPlay];
-
-    [self.liveBtn setTitle:@"断开直播" forState:UIControlStateNormal];
+        [self.player prepareToPlay];
+        
+        [self.liveBtn setTitle:@"断开直播" forState:UIControlStateNormal];
+    }else{
+        [self.liveBtn setTitle:@"开始直播" forState:UIControlStateNormal];
+        [self.player.view removeFromSuperview];
+        self.player = nil;
+    }
 }
 
-- (void)wilddogVideoMeetingCastDidStopped:(WDGVideoMeetingCast *)MeetingCast {
-    NSLog(@"%s", __func__);
-    [self.liveBtn setTitle:@"开始直播" forState:UIControlStateNormal];
-    [self.player.view removeFromSuperview];
-    self.player = nil;
-}
+#pragma -mark WDGVideoConferenceDelegate
 
-- (void)wilddogVideoMeetingCast:(WDGVideoMeetingCast *)MeetingCast didFailedToChangeCastStatusWithError:(NSError *)error {
-    NSLog(@"%s", __func__);
-    [self.liveBtn setTitle:@"开始直播" forState:UIControlStateNormal];
-    [self.player.view removeFromSuperview];
-    self.player = nil;
-}
-
-#pragma -mark WDGVideoConversationDelegate
-
-- (void)conversation:(WDGVideoConversation *)conversation didConnectParticipant:(WDGVideoParticipant *)participant {
+- (void)conference:(WDGVideoConference *)conference didConnectParticipant:(WDGVideoParticipant *)participant{
 
     participant.delegate = self;
 
@@ -186,16 +189,14 @@
 
 }
 
-- (void)conversation:(WDGVideoConversation *)conversation didFailToConnectParticipant:(WDGVideoParticipant *)participant error:(NSError *)error {
-
+- (void)conference:(WDGVideoConference *)conference didFailedToConnectWithError:(NSError *)error{
     // 检查是否应该结束会话
     if (self.videoConference.participants.count == 0) {
         [self clickDisconnect:nil];
     }
-
 }
 
-- (void)conversation:(WDGVideoConversation *)conversation didDisconnectParticipant:(WDGVideoParticipant *)participant {
+- (void)conference:(WDGVideoConference *)conference didDisconnectParticipant:(WDGVideoParticipant *)participant{
 
     [UIView animateWithDuration:1 animations:^{
         // 参与者离线，解绑WDGVideoView
