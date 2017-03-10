@@ -12,10 +12,6 @@
 #import <WilddogVideo/WilddogVideo.h>
 #import <IJKMediaFramework/IJKMediaFramework.h>
 
-#import "UserListTableViewController.h"
-
-#define conferenceID @"123456"
-
 @interface RoomViewController ()<WDGVideoClientDelegate, WDGVideoConferenceDelegate, WDGVideoMeetingCastDelegate,WDGVideoParticipantDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *directContainerView;
@@ -25,14 +21,14 @@
 @property(nonatomic, strong) WDGVideoClient *wilddogVideoClient;
 @property(nonatomic, strong) WDGVideoConference *videoConference;
 @property(nonatomic, strong) WDGVideoLocalStream *localStream;
-@property (nonatomic, strong) WDGVideoOutgoingInvite *outgoingInvite;
+@property(nonatomic, strong) WDGVideoOutgoingInvite *outgoingInvite;
 @property(nonatomic, strong) NSMutableArray<WDGVideoRemoteStream *> *remoteStreams;
+@property(nonatomic, strong) NSString *otherParticipantID;
+@property(nonatomic, strong) NSString *conferenceID;
 
 @property (weak, nonatomic) IBOutlet UIButton *liveBtn;
 @property (weak, nonatomic) IBOutlet WDGVideoView *localVideoView;
 @property (weak, nonatomic) IBOutlet WDGVideoView *remoteVideoView01;
-@property (weak, nonatomic) IBOutlet WDGVideoView *remoteVideoView02;
-@property (weak, nonatomic) IBOutlet WDGVideoView *remoteVideoView03;
 
 @property(nonatomic, strong)NSMutableArray *onlineUsers;
 
@@ -45,13 +41,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    self.title = conferenceID;
-    self.navigationItem.hidesBackButton = YES;
-    self.remoteStreams = [@[] mutableCopy];
-    self.wilddog = [[WDGSync sync] reference];
+    UIAlertController *alertControl = [UIAlertController alertControllerWithTitle:@"请填写会议 ID" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alertControl addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        self.conferenceID = alertControl.textFields.firstObject.text;
 
-    [self setupWilddogVideoClient];
+        self.title = self.conferenceID;
+        self.navigationItem.hidesBackButton = YES;
+        self.remoteStreams = [@[] mutableCopy];
+        self.wilddog = [[WDGSync sync] reference];
 
+        [self setupWilddogVideoClient];
+    }]];
+
+    [alertControl addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"会议 ID";
+    }];
+
+    [self presentViewController:alertControl animated:YES completion:nil];
 }
 
 -(void)setupWilddogVideoClient {
@@ -91,7 +97,7 @@
     }
 
     WDGVideoConnectOptions *connectOptions = [[WDGVideoConnectOptions alloc] initWithLocalStream:self.localStream];
-    self.videoConference = [self.wilddogVideoClient connectToConferenceWithID:conferenceID options:connectOptions delegate:self];
+    self.videoConference = [self.wilddogVideoClient connectToConferenceWithID:self.conferenceID options:connectOptions delegate:self];
 }
 
 - (IBAction)clickLivePlay:(UIButton *)sender {
@@ -109,6 +115,14 @@
     }
 }
 
+- (IBAction)switchLivePlay:(id)sender {
+
+    if (self.otherParticipantID.length == 0) {
+        return;
+    }
+    [self.videoConference.meetingCast startWithParticipantID:self.otherParticipantID];
+}
+
 - (IBAction)clickDisconnect:(UIButton *)sender {
 
     if (self.videoConference) {
@@ -119,6 +133,9 @@
     if (self.videoConference.meetingCast) {
         [self.videoConference.meetingCast stop];
     }
+
+    [self.localStream close];
+
     [self.navigationController popViewControllerAnimated:YES];
 
 }
@@ -171,28 +188,32 @@
     }
 }
 
+#pragma mark - WDGVideoParticipantDelegate
+
+- (void)participant:(WDGVideoParticipant *)participant didAddStream:(WDGVideoRemoteStream *)stream
+{
+    self.otherParticipantID = participant.ID;
+
+    [self.remoteStreams addObject:participant.stream];
+
+    if (1 == self.remoteStreams.count) {
+        [self.remoteStreams.lastObject attach:self.remoteVideoView01];
+    }
+}
+
 #pragma -mark WDGVideoConferenceDelegate
 
 - (void)conference:(WDGVideoConference *)conference didConnectParticipant:(WDGVideoParticipant *)participant{
 
     participant.delegate = self;
-
-    [self.remoteStreams addObject: participant.stream];
-
-    if (1 == self.remoteStreams.count) {
-        [self.remoteStreams.lastObject attach:self.remoteVideoView01];
-    }else if (2 == self.remoteStreams.count) {
-        [self.remoteStreams.lastObject attach:self.remoteVideoView02];
-    }else if (3 == self.remoteStreams.count) {
-        [self.remoteStreams.lastObject attach:self.remoteVideoView03];
-    }
-
 }
 
 - (void)conference:(WDGVideoConference *)conference didFailedToConnectWithError:(NSError *)error{
     // 检查是否应该结束会话
     if (self.videoConference.participants.count == 0) {
         [self clickDisconnect:nil];
+
+        NSLog(@"视频会议连接失败！");
     }
 }
 
@@ -203,10 +224,6 @@
         for (NSInteger i = 0; i < self.remoteStreams.count; i++) {
             if (0 == i) {
                 [participant.stream detach:self.remoteVideoView01];
-            }else if (1 == i) {
-                [participant.stream detach:self.remoteVideoView02];
-            }else if (2 == i) {
-                [participant.stream detach:self.remoteVideoView03];
             }
         }
 
@@ -215,19 +232,9 @@
         for (NSInteger i = 0; i < self.remoteStreams.count; i++) {
             if (0 == i) {
                 [participant.stream attach:self.remoteVideoView01];
-            }else if (1 == i) {
-                [participant.stream attach:self.remoteVideoView02];
-            }else if (2 == i) {
-                [participant.stream attach:self.remoteVideoView03];
             }
         }
     }];
-    
-    // 检查是否应该结束会话
-    if (self.videoConference.participants.count == 0) {
-        [self clickDisconnect:nil];
-    }
-
 }
 
 - (void)didReceiveMemoryWarning {

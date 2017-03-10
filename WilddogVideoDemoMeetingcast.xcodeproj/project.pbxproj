@@ -15,11 +15,9 @@
 		28F032AF1DCC666B006BAFDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F032AD1DCC666B006BAFDA /* LaunchScreen.storyboard */; };
 		28F032BA1DCC666B006BAFDA /* WilddogVideoDemoMeetingcastTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F032B91DCC666B006BAFDA /* WilddogVideoDemoMeetingcastTests.m */; };
 		28F032C81DCC6792006BAFDA /* RoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F032C71DCC6792006BAFDA /* RoomViewController.m */; };
-		28F032CE1DCC67B7006BAFDA /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F032CD1DCC67B7006BAFDA /* UserTableViewCell.m */; };
 		28F032D01DCC67ED006BAFDA /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F032CF1DCC67ED006BAFDA /* IJKMediaFramework.framework */; };
 		28F032D21DCC6806006BAFDA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F032D11DCC6806006BAFDA /* libz.tbd */; };
 		28F032D41DCC680C006BAFDA /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F032D31DCC680C006BAFDA /* libbz2.tbd */; };
-		28F032D71DCC68E3006BAFDA /* UserListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F032D61DCC68E3006BAFDA /* UserListTableViewController.m */; };
 		D753E57C7A264F712E248645 /* libPods-WilddogVideoDemoMeetingcastTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 776AFB8DA0CCC57A627B5CD8 /* libPods-WilddogVideoDemoMeetingcastTests.a */; };
 		FF18B69997529DA6BFC4A155 /* libPods-WilddogVideoDemoMeetingcast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A1F915C58E654D770FE911 /* libPods-WilddogVideoDemoMeetingcast.a */; };
 /* End PBXBuildFile section */
@@ -50,13 +48,9 @@
 		28F032BB1DCC666B006BAFDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28F032C61DCC6792006BAFDA /* RoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomViewController.h; sourceTree = "<group>"; };
 		28F032C71DCC6792006BAFDA /* RoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomViewController.m; sourceTree = "<group>"; };
-		28F032CC1DCC67B7006BAFDA /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewCell.h; sourceTree = "<group>"; };
-		28F032CD1DCC67B7006BAFDA /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewCell.m; sourceTree = "<group>"; };
 		28F032CF1DCC67ED006BAFDA /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		28F032D11DCC6806006BAFDA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		28F032D31DCC680C006BAFDA /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
-		28F032D51DCC68E3006BAFDA /* UserListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserListTableViewController.h; sourceTree = "<group>"; };
-		28F032D61DCC68E3006BAFDA /* UserListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserListTableViewController.m; sourceTree = "<group>"; };
 		35A1F915C58E654D770FE911 /* libPods-WilddogVideoDemoMeetingcast.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WilddogVideoDemoMeetingcast.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58DD14557C24195CCB281AB6 /* Pods-WilddogVideoDemoMeetingcast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogVideoDemoMeetingcast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogVideoDemoMeetingcast/Pods-WilddogVideoDemoMeetingcast.debug.xcconfig"; sourceTree = "<group>"; };
 		776AFB8DA0CCC57A627B5CD8 /* libPods-WilddogVideoDemoMeetingcastTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WilddogVideoDemoMeetingcastTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,10 +112,6 @@
 				28F032A61DCC666B006BAFDA /* ViewController.m */,
 				28F032C61DCC6792006BAFDA /* RoomViewController.h */,
 				28F032C71DCC6792006BAFDA /* RoomViewController.m */,
-				28F032D51DCC68E3006BAFDA /* UserListTableViewController.h */,
-				28F032D61DCC68E3006BAFDA /* UserListTableViewController.m */,
-				28F032CC1DCC67B7006BAFDA /* UserTableViewCell.h */,
-				28F032CD1DCC67B7006BAFDA /* UserTableViewCell.m */,
 				28F032A81DCC666B006BAFDA /* Main.storyboard */,
 				28F032AB1DCC666B006BAFDA /* Assets.xcassets */,
 				28F032AD1DCC666B006BAFDA /* LaunchScreen.storyboard */,
@@ -373,10 +363,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28F032D71DCC68E3006BAFDA /* UserListTableViewController.m in Sources */,
 				28F032A71DCC666B006BAFDA /* ViewController.m in Sources */,
 				28F032A41DCC666B006BAFDA /* AppDelegate.m in Sources */,
-				28F032CE1DCC67B7006BAFDA /* UserTableViewCell.m in Sources */,
 				28F032A11DCC666B006BAFDA /* main.m in Sources */,
 				28F032C81DCC6792006BAFDA /* RoomViewController.m in Sources */,
 			);
