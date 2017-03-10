@@ -120,7 +120,7 @@
     if (self.otherParticipantID.length == 0) {
         return;
     }
-    [self.videoConference.meetingCast startWithParticipantID:self.otherParticipantID];
+    [self.videoConference.meetingCast switchToParticipantID:self.otherParticipantID];
 }
 
 - (IBAction)clickDisconnect:(UIButton *)sender {
