@@ -23,6 +23,7 @@
 @property(nonatomic, strong) WDGVideoLocalStream *localStream;
 @property(nonatomic, strong) WDGVideoOutgoingInvite *outgoingInvite;
 @property(nonatomic, strong) NSMutableArray<WDGVideoRemoteStream *> *remoteStreams;
+@property(nonatomic, strong) WDGVideoParticipant *otherParticipant;
 @property(nonatomic, strong) NSString *otherParticipantID;
 @property(nonatomic, strong) NSString *conferenceID;
 
@@ -120,7 +121,19 @@
     if (self.otherParticipantID.length == 0) {
         return;
     }
-    [self.videoConference.meetingCast switchToParticipantID:self.otherParticipantID];
+    [self.videoConference.meetingCast switchToParticipantID:self.otherParticipantID completion:^(NSError * _Nullable error) {
+        if (!error) {
+            UIButton *btn = (UIButton *)sender;
+            btn.selected = !btn.selected;
+            if (btn.selected) {
+                self.otherParticipantID = self.wDGUser.uid;
+            } else{
+                self.otherParticipantID = self.otherParticipant.ID;
+            }
+        }else{
+            NSLog(@"切换直播失败。");
+        }
+    }];
 }
 
 - (IBAction)clickDisconnect:(UIButton *)sender {
@@ -192,6 +205,7 @@
 
 - (void)participant:(WDGVideoParticipant *)participant didAddStream:(WDGVideoRemoteStream *)stream
 {
+    self.otherParticipant = participant;
     self.otherParticipantID = participant.ID;
 
     [self.remoteStreams addObject:participant.stream];
